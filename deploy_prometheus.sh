@@ -6,7 +6,9 @@ fi
 deploy_prometheus_operator() {
     echo "Install prometheus"
     git clone https://github.com/coreos/kube-prometheus.git
+    pushd kube-prometheus
     git checkout release-0.8
+    popd
 
     #kubectl create namespace openshift-monitoring
     echo "Replace namespace with open-cluster-management-addon-observability"
